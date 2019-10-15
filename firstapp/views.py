@@ -47,7 +47,7 @@ class Task:
 
     def get(self):
         try:
-            if len(self.uuid)>36:
+            if len(self.uuid)!=36:
                 return 400
             task = Status.objects.get(uuid=f'{self.uuid}')
             self.status = task.status
